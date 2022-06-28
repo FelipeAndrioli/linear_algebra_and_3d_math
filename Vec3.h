@@ -59,22 +59,54 @@ Vec3 normalize(Vec3 vector) {
 	return normalized;
 }
 
-/*
-	TODO's
+Vec3 vectorAddition(Vec3 vec_a, Vec3 vec_b) {
+	Vec3 resulting_vector;
 
-	[] - Vector -> Vector 
-		[] - Addition
-		[] - Subtraction
-	[] - Vector -> Scalar
-		[] - Multiplication
-		[] - Division
-	[DONE] - Negate a Vector
-*/
+	resulting_vector.x = vec_a.x + vec_b.x;
+	resulting_vector.y = vec_a.y + vec_b.y;
+	resulting_vector.z = vec_a.z + vec_b.z;
 
+	return resulting_vector;
+}
 
+Vec3 vectorSubtraction(Vec3 vec_a, Vec3 vec_b) {
+	Vec3 resulting_vector;
 
+	resulting_vector.x = vec_a.x - vec_b.x;
+	resulting_vector.y = vec_a.y - vec_b.y;
+	resulting_vector.z = vec_a.z - vec_b.z;
 
+	return resulting_vector;
+}
 
+Vec3 vectorMultiplication(Vec3 vec_a, Vec3 vec_b) {
+	Vec3 resulting_vector;
 
+	resulting_vector.x = vec_a.x * vec_b.x;
+	resulting_vector.y = vec_a.y * vec_b.y;
+	resulting_vector.z = vec_a.z * vec_b.z;
+
+	return resulting_vector;
+}
+
+Vec3 vectorScalarMultiplication(Vec3 vector, float scalar) {
+	Vec3 new_vector;
+
+	new_vector.x = vector.x * scalar;
+	new_vector.y = vector.y * scalar;
+	new_vector.z = vector.z * scalar;
+
+	return new_vector;
+}
+
+Vec3 vectorScalarDivision(Vec3 vector, float scalar) {
+	Vec3 new_vector;
+
+	new_vector.x = vector.x / scalar;
+	new_vector.y = vector.y / scalar;
+	new_vector.z = vector.z / scalar;
+
+	return new_vector;
+}
 
 
