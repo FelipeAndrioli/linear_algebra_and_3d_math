@@ -43,6 +43,16 @@ Vec3 normalize(Vec3 vector) {
 	return normalized;
 }
 
+float distanceBetweenVectors(Vec3 vec_a, Vec3 vec_b) {
+	Vec3 resulting_vector;
+
+	resulting_vector.x = vec_b.x - vec_a.x;	
+	resulting_vector.y = vec_b.y - vec_a.y;	
+	resulting_vector.z = vec_b.z - vec_a.z;	
+
+	return vectorMagnitude(resulting_vector);
+}
+
 int main() {
 
 	Vec3 vector;
