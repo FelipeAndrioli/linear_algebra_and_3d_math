@@ -31,6 +31,22 @@ float vectorMagnitude(Vec3 vector) {
 	return sqrt(pow(vector.x, 2) + pow(vector.y, 2) + pow(vector.z, 2));
 }
 
+float distanceBetweenVectors(Vec3 vec_a, Vec3 vec_b) {
+	Vec3 resulting_vector;
+
+	resulting_vector.x = vec_b.x - vec_a.x;	
+	resulting_vector.y = vec_b.y - vec_a.y;	
+	resulting_vector.z = vec_b.z - vec_a.z;	
+
+	return vectorMagnitude(resulting_vector);
+}
+
+void negateVector(Vec3 *vector) {
+	vector->x = -vector->x;
+	vector->y = -vector->y;
+	vector->z = -vector->z;
+}
+
 Vec3 normalize(Vec3 vector) {
 	float magnitude = vectorMagnitude(vector);
 
@@ -43,12 +59,22 @@ Vec3 normalize(Vec3 vector) {
 	return normalized;
 }
 
-float distanceBetweenVectors(Vec3 vec_a, Vec3 vec_b) {
-	Vec3 resulting_vector;
+/*
+	TODO's
 
-	resulting_vector.x = vec_b.x - vec_a.x;	
-	resulting_vector.y = vec_b.y - vec_a.y;	
-	resulting_vector.z = vec_b.z - vec_a.z;	
+	[] - Vector -> Vector 
+		[] - Addition
+		[] - Subtraction
+	[] - Vector -> Scalar
+		[] - Multiplication
+		[] - Division
+	[DONE] - Negate a Vector
+*/
 
-	return vectorMagnitude(resulting_vector);
-}
+
+
+
+
+
+
+
