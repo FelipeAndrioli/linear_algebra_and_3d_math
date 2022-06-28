@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 typedef struct {
 	float x;
@@ -26,29 +27,38 @@ Vec3 crossProduct(Vec3 vec_a, Vec3 vec_b) {
 	return cross_product;
 }
 
-int main() {
+float vectorMagnitude(Vec3 vector) {
+	return sqrt(pow(vector.x, 2) + pow(vector.y, 2) + pow(vector.z, 2));
+}
 
-	/*
-		TODO's
-			[IN PROGRESS] - Vectors
-				[DONE] - Struct
-				[DONE] - Print
-				[] - Magnitude(length)
-				[] - Unit Vector(normalized vector)
-				[DONE] - Products
-					[DONE] - Dot Product
-					[DONE] - Cross Product
-	*/
+Vec3 normalize(Vec3 vector) {
+	float magnitude = vectorMagnitude(vector);
+
+	Vec3 normalized;
+
+	normalized.x = vector.x / magnitude;
+	normalized.y = vector.y / magnitude;
+	normalized.z = vector.z / magnitude;
+
+	return normalized;
+}
+
+int main() {
 
 	Vec3 vector;
 	vector.x = 2.0;
 	vector.y = 6.0;
 	vector.z = 12.0;
 
-	Vec3 vector_b;
-	vector_b.x = 12.0;
-	vector_b.y = 16.0;
-	vector_b.z = 2.0;
-
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
